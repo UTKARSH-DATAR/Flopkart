@@ -47,6 +47,8 @@ public class Register extends HttpServlet {
 		
 		HttpSession session = request.getSession();
 		session.setAttribute("username", username);
+		User user = dao.getUser(username);
+		session.setAttribute("clientName", user.getName());
 		response.sendRedirect("home");
 	}
 

@@ -136,6 +136,23 @@
         min-width: 30px;
         text-align: center;
     }
+    
+    @media (max-width: 768px) {
+    .product-container {
+        flex-direction: column;   /* stack vertically */
+        padding: 20px;
+        gap: 20px;
+    }
+    .product-image, .product-details {
+        flex: 1 1 100%;           /* take full width */
+    }
+    .product-details h2 {
+        font-size: 24px;          /* scale down heading */
+    }
+    .price { font-size: 22px; }
+    .old-price { font-size: 16px; }
+    .description { font-size: 15px; }
+}
 </style>
 </head>
 <body style="margin-top: 20px;">

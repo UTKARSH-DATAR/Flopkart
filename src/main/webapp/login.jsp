@@ -5,27 +5,29 @@
 <head>
 <meta charset="UTF-8">
 <title>Sign In</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style type="text/css">
 body {
     margin: 0;
     font-family: roboto, Arial, sans-serif;
-	background: linear-gradient(135deg, #f5f5f5, #e0e0e0);
-	background-attachment: fixed;
+    background: linear-gradient(135deg, #f5f5f5, #e0e0e0);
+    background-attachment: fixed;
 }
 
+/* Sign in form */
 .userform {
     background: #ffffff;
     width: 425px;
-    padding: 30px 35px;
+    max-width: 90%;              /* ✅ shrink on mobile */
+    padding: 30px 35px;          /* ✅ space inside */
     border-radius: 12px;
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
     margin: 60px auto;
     text-align: left;
     transition: transform 0.3s ease;
+    box-sizing: border-box;      /* ✅ inputs respect padding */
 }
-.userform:hover {
-    transform: translateY(-5px);
-}
+.userform:hover { transform: translateY(-5px); }
 
 .userform h1 {
     text-align: center;
@@ -43,17 +45,18 @@ body {
     font-size: 14px;
 }
 
-.userform input[type="text"], 
+.userform input[type="text"],
 .userform input[type="password"] {
-    width: 93%;
+    width: 100%;
     padding: 12px;
     margin-bottom: 18px;
     border: 1px solid #ccc;
     border-radius: 8px;
     font-size: 14px;
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    box-sizing: border-box;      /* ✅ prevents overflow */
 }
-.userform input[type="text"]:focus, 
+.userform input[type="text"]:focus,
 .userform input[type="password"]:focus {
     border-color: #2c3e50;
     box-shadow: 0 0 6px rgba(44, 62, 80, 0.3);
@@ -71,6 +74,7 @@ body {
     font-size: 16px;
     cursor: pointer;
     transition: background 0.3s ease, transform 0.2s ease;
+    box-sizing: border-box;
 }
 .userform input[type="submit"]:hover {
     background: #333;
@@ -97,8 +101,16 @@ body {
     font-size: 14px;
     font-weight: 500;
 }
-.userform a:hover {
-    text-decoration: underline;
+.userform a:hover { text-decoration: underline; }
+
+/* 📱 Mobile adjustments */
+@media (max-width: 480px) {
+    .userform {
+        margin: 40px 15px;       /* ✅ side margins on mobile */
+        padding: 20px;           /* tighter padding */
+    }
+    .userform h1 { font-size: 22px; }
+    .userform input[type="submit"] { font-size: 15px; padding: 12px; }
 }
 </style>
 </head>

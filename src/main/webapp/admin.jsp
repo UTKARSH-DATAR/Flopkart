@@ -5,20 +5,24 @@
 <head>
     <meta charset="UTF-8">
     <title>Welcome Admin</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
         body {
             font-family: roboto, Arial, sans-serif;
             background-color: #f0f2f5;
+            margin: 0;
         }
 
         .container {
             background-color: #fff;
             width: 380px;
+            max-width: 90%;
             padding: 30px 25px;
-            margin: auto;
+            margin: 60px auto;
             border-radius: 12px;
             box-shadow: 0 4px 14px rgba(0,0,0,0.15);
             text-align: center;
+            box-sizing: border-box;
         }
 
         h1 {
@@ -58,15 +62,29 @@
             transition: background-color 0.3s ease, transform 0.2s ease;
             width: 100%;
             font-weight: bold;
+            box-sizing: border-box;
         }
 
         .btn:hover, .btn-link button:hover, .btn-link input[type="submit"]:hover {
             background-color: #444;
             transform: scale(1.03);
         }
+
+        @media (max-width: 480px) {
+            .container {
+                margin: 40px 15px;
+                padding: 20px;
+            }
+            h1 { font-size: 22px; }
+            h3 { font-size: 14px; }
+            .btn, .btn-link button, .btn-link input[type="submit"] {
+                font-size: 14px;
+                padding: 12px;
+            }
+        }
     </style>
 </head>
-<body style="margin-top: 60px;">
+<body>
     <%@ include file="header.jsp" %>
     <div class="container">
         <h1>Welcome Admin</h1>

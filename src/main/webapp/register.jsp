@@ -5,26 +5,29 @@
 <head>
 <meta charset="UTF-8">
 <title>Flopkart</title>
-
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style type="text/css">
 body {
+    margin: 0;
     font-family: roboto, Arial, sans-serif;
     background: linear-gradient(135deg, #f5f5f5, #e0e0e0);
+    background-attachment: fixed;
 }
 
+/* Register form */
 .userform {
     background: #ffffff;
     width: 400px;
-    padding: 40px 35px;
+    max-width: 90%;              /* ✅ shrink on mobile */
+    padding: 40px 35px;          /* ✅ space inside */
     border-radius: 12px;
     box-shadow: 0 6px 20px rgba(0,0,0,0.15);
     margin: 60px auto;
     text-align: left;
     transition: transform 0.3s ease;
+    box-sizing: border-box;      /* ✅ inputs respect padding */
 }
-.userform:hover {
-    transform: translateY(-5px);
-}
+.userform:hover { transform: translateY(-5px); }
 
 .userform h1 {
     text-align: center;
@@ -44,13 +47,14 @@ body {
 
 .userform input[type="text"],
 .userform input[type="password"] {
-    width: 93.5%;
+    width: 100%;                 /* ✅ full width inside padded box */
     padding: 12px;
     margin-bottom: 18px;
     border: 1px solid #ccc;
     border-radius: 8px;
     font-size: 14px;
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    box-sizing: border-box;      /* ✅ prevents overflow */
 }
 .userform input[type="text"]:focus,
 .userform input[type="password"]:focus {
@@ -70,10 +74,21 @@ body {
     font-size: 16px;
     cursor: pointer;
     transition: background 0.3s ease, transform 0.2s ease;
+    box-sizing: border-box;
 }
 .userform input[type="submit"]:hover {
     background: #333;
     transform: scale(1.02);
+}
+
+/* 📱 Mobile adjustments */
+@media (max-width: 480px) {
+    .userform {
+        margin: 40px 15px;       /* ✅ side margins on mobile */
+        padding: 20px;           /* tighter padding */
+    }
+    .userform h1 { font-size: 22px; }
+    .userform input[type="submit"] { font-size: 15px; padding: 12px; }
 }
 </style>
 </head>
@@ -91,13 +106,13 @@ body {
             <input type="text" name="contact" placeholder="Enter your contact number" required="required">
 
             <label>Username :</label>
-            <input type="text" name="username" placeholder="Enter username" 
+            <input type="text" name="username" placeholder="Enter username"
                    required="required" maxlength="20">
 
             <label>Password :</label>
-            <input type="password" name="password" placeholder="Enter strong password" 
+            <input type="password" name="password" placeholder="Enter strong password"
                    required="required" minlength="8" maxlength="15"
-                   pattern=".{8,15}" 
+                   pattern=".{8,15}"
                    title="Password must be between 8 and 15 characters">
 
             <input type="submit" value="Register">

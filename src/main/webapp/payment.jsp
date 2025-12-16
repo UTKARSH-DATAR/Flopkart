@@ -72,9 +72,9 @@
     <h2>PAYMENT</h2>
     <div class="card-logos">
         <p style="margin-left: 7px;">Accepted cards</p>
-        <img src="${pageContext.request.contextPath}/images/visa.png" alt="Visa" style="margin-left: 0px;">
-        <img src="${pageContext.request.contextPath}/images/mastercard.png" alt="MasterCard">
-        <img src="${pageContext.request.contextPath}/images/amex.png" alt="American Express">
+        <img src="https://res.cloudinary.com/dz8qf9ugu/image/upload/v1765883262/visa_byqdjm.png" alt="Visa" style="margin-left: 0px;">
+        <img src="https://res.cloudinary.com/dz8qf9ugu/image/upload/v1765883262/mastercard_cywhrh.png" alt="MasterCard">
+        <img src="https://res.cloudinary.com/dz8qf9ugu/image/upload/v1765883261/amex_rcfyyu.png" alt="American Express">
     </div>
     <form onsubmit="return validateForm()" action="Order" method="post" novalidate>
         <div class="form-group">

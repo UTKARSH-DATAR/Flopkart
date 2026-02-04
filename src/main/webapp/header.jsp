@@ -133,6 +133,7 @@ body {
   .header-left i { display: none; } 
   .header-right a, .header-right span { font-size: 0.8rem; margin-left: 8px; }
   .hamburger svg { width: 22px; height: 22px; }
+/*   .container {grid-template-columns: repeat(2, 1fr);}  */
 }
 
 /* 📱 Very small screens (≤360px) */
@@ -141,6 +142,7 @@ body {
   #logo { font-size: 1rem; }
   .header-right a, .header-right span { font-size: 0.75rem; margin-left: 6px; }
   .hamburger svg { width: 20px; height: 20px; }
+/*   .container {grid-template-columns: repeat(2, 1fr);}  */
 }
 </style>
 </head>

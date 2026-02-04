@@ -27,17 +27,17 @@ public class DatabaseConnect implements DataAccess
 	
     static {
     	
-//		String url = "jdbc:mysql://localhost:3306/adv_java_project";
-//		String username = "root";
-//		String password = "Root";
+		String url = System.getenv("DATABASE_URL");
+		String username = System.getenv("DATABASE_USERNAME");
+		String password = System.getenv("DATABASE_PASSWORD");
     	
         try {
         Class.forName("com.mysql.cj.jdbc.Driver");
         
         HikariConfig config = new HikariConfig();
-        config.setJdbcUrl("jdbc:mysql://flopkart-utkarsh-flopkart.l.aivencloud.com:19875/adv_java_project?sslMode=REQUIRED");
-        config.setUsername("avnadmin");
-        config.setPassword("AVNS_LJSnsEOiYyhizvVgRsp");
+        config.setJdbcUrl(url);
+        config.setUsername(username);
+        config.setPassword(password);
         
         config.setMaximumPoolSize(3);
         config.setMinimumIdle(2);

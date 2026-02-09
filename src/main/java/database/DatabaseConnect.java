@@ -27,7 +27,7 @@ public class DatabaseConnect implements DataAccess
 	
     static {
     	
-		String url = System.getenv("DATABASE_URL");
+		String url = System.getenv("DATABASE_URL"); //jdbc:mysql://flopkart-1-utkarsh-flopkart.a.aivencloud.com:19875/adv_java_project?ssl-mode=REQUIRED
 		String username = System.getenv("DATABASE_USERNAME");
 		String password = System.getenv("DATABASE_PASSWORD");
     	

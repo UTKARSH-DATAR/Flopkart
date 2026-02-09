@@ -44,6 +44,7 @@ body {
   color: white;
   letter-spacing: 1px;
   flex-shrink: 1;
+  cursor: pointer;
 }
 .header-left i {
   font-size: 0.85rem;
@@ -149,7 +150,7 @@ body {
 <body>
 <div class="header">
   <div class="header-left">
-    <h1 id="logo">FLOPKART</h1>
+    <h1 id="logo"  onclick="window.location='home'">FLOPKART</h1>
     <i>we deliver disappointment faster!</i>
   </div>
   <div class="header-right">
